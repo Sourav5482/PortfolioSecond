@@ -4,7 +4,7 @@ import ChromaGrid from './ChromaGrid.jsx';
 const FifthPage = () => {
      const items = [
   {
-    image: "public/images/prism.jpg",
+    image: "/images/prism.jpg",
     title: "Prism",
     subtitle: "Multimodal RAG System",
     handle: "@TeamAimers",
@@ -13,7 +13,7 @@ const FifthPage = () => {
     url: "https://prism-web-three.vercel.app/"
   },
   {
-    image: "public/images/margai.jpg    ",
+    image: "/images/margai.jpg    ",
     title: "Marg-AI",
     subtitle: "Public Transport System",
     handle: "@TeamAimers",
@@ -23,7 +23,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/specialbite.jpg",
+    image: "/images/specialbite.jpg",
     title: "The Special Bite ",
     subtitle: "Order at Doorsteep",
     handle: "@Sourav5482",
@@ -33,7 +33,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/imggal.jpg",
+    image: "/images/imggal.jpg",
     title: "Image Gallery",
     subtitle: "Image Gallery Practice",
     handle: "@Sourav5482",
@@ -43,7 +43,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/bisectionmethod.jpg",
+    image: "/images/bisectionmethod.jpg",
     title: "Bisection Method",
     subtitle: "Root Finder",
     handle: "@Sourav5482",
@@ -53,7 +53,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/userauth.jpg",
+    image: "/images/userauth.jpg",
     title: "User Authentication",
     subtitle: "Using C",
     handle: "@Sourav5482",
@@ -63,7 +63,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/progresBar.jpg",
+    image: "/images/progresBar.jpg",
     title: "Progres Bar",
     subtitle: "Using C",
     handle: "@Sourav5482",
@@ -73,7 +73,7 @@ const FifthPage = () => {
   }
   ,
   {
-    image: "public/images/medisetu.jpg",
+    image: "/images/medisetu.jpg",
     title: "MediSetu",
     subtitle: "Book your appointment",
     handle: "@Sourav5482",
