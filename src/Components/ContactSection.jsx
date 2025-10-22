@@ -5,6 +5,7 @@ import Magnetic from './Magnetic';
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [focus, setFocus] = useState({ name: false, email: false, message: false });
   const [touched, setTouched] = useState({});
   const [status, setStatus] = useState('idle');
   const [copied, setCopied] = useState(false);
@@ -19,6 +20,7 @@ export default function ContactSection() {
   function handleBlur(e) {
     const { name } = e.target;
     setTouched(prev => ({ ...prev, [name]: true }));
+    setFocus(prev => ({ ...prev, [name]: false }));
   }
 
   function validate() {
@@ -81,7 +83,7 @@ export default function ContactSection() {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText('hello@sourav.dev');
+      await navigator.clipboard.writeText('bcasourav5482@gmail.com');
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {}
@@ -174,14 +176,16 @@ export default function ContactSection() {
                 className="p-[1px] rounded-2xl bg-gradient-to-r from-gray-100/10 to-white/5"
               >
                 <div className="rounded-2xl bg-[#121212] p-7 border border-gray-800/70">
-                  <button type="button" onClick={copyEmail} className="flex items-center gap-3   text-gray-300 hover:text-gray-200">
-                    <FiMail /> <span className='text-sm'>bcasourav5482@gmail.com</span>
-                    {copied && <span className="ml-2 text-emerald-400 text-xs">Copied</span>}
+                  <button type="button" onClick={copyEmail} className="flex items-center gap-2   text-gray-300 hover:text-gray-200">
+                    <FiMail /> <span className='text-sm'>bcasourav5482@gmail.com  
+                      </span> 
+                    
                   </button>
+                  
                 </div>
               </motion.div>
             </div>
-
+{copied && <span className="ml-2 text-emerald-400 text-xs ml-[300px]">Copied</span>}
             <motion.div
               initial={{ y: 16, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -224,11 +228,17 @@ export default function ContactSection() {
                   className="relative block"
                 >
                   <span className="absolute left-3 top-3 text-gray-500"><FiMail size={16} /></span>
-                  <span className="absolute left-9 top-3 pointer-events-none text-gray-400">Name</span>
+                  <motion.span
+                    className="absolute left-9 top-3 pointer-events-none text-gray-400"
+                    animate={{ opacity: focus.name || form.name ? 0 : 1 }}
+                  >
+                    Name
+                  </motion.span>
                   <input
                     name="name"
                     value={form.name}
                     onChange={handleChange}
+                    onFocus={() => setFocus(prev => ({ ...prev, name: true }))}
                     onBlur={handleBlur}
                     className={`w-full bg-[#1b1b1b] pl-9 pr-3 pt-6 pb-3 rounded-xl border ${touched.name && errors.name ? 'border-rose-400' : 'border-gray-700'} outline-none text-gray-100 placeholder-transparent focus:border-gray-500 transition-colors`}
                     placeholder="Your name"
@@ -243,11 +253,17 @@ export default function ContactSection() {
                   className="relative block"
                 >
                   <span className="absolute left-3 top-3 text-gray-500"><FiMail size={16} /></span>
-                  <span className="absolute left-9 top-3 pointer-events-none text-gray-400">Email</span>
+                  <motion.span
+                    className="absolute left-9 top-3 pointer-events-none text-gray-400"
+                    animate={{ opacity: focus.email || form.email ? 0 : 1 }}
+                  >
+                    Email
+                  </motion.span>
                   <input
                     name="email"
                     value={form.email}
                     onChange={handleChange}
+                    onFocus={() => setFocus(prev => ({ ...prev, email: true }))}
                     onBlur={handleBlur}
                     className={`w-full bg-[#1b1b1b] pl-9 pr-3 pt-6 pb-3 rounded-xl border ${touched.email && errors.email ? 'border-rose-400' : 'border-gray-700'} outline-none text-gray-100 placeholder-transparent focus:border-gray-500 transition-colors`}
                     placeholder="you@company.com"
@@ -262,13 +278,19 @@ export default function ContactSection() {
                   className="relative block"
                 >
                   <span className="absolute left-3 top-3 text-gray-500"><FiSend size={16} /></span>
-                  <span className="absolute left-9 top-3 pointer-events-none text-gray-400">Message</span>
+                  <motion.span
+                    className="absolute left-9 top-3 pointer-events-none text-gray-400"
+                    animate={{ opacity: focus.message || form.message ? 0 : 1 }}
+                  >
+                    Message
+                  </motion.span>
                   <textarea
                     name="message"
                     rows={5}
                     maxLength={400}
                     value={form.message}
                     onChange={handleChange}
+                    onFocus={() => setFocus(prev => ({ ...prev, message: true }))}
                     onBlur={handleBlur}
                     className={`w-full bg-[#1b1b1b] pl-9 pr-3 pt-6 pb-3 rounded-xl border ${touched.message && errors.message ? 'border-rose-400' : 'border-gray-700'} outline-none text-gray-100 placeholder-transparent resize-none focus:border-gray-500 transition-colors`}
                     placeholder="Tell me about your project"

@@ -111,7 +111,7 @@ const LandingPage = () => {
 
             {/* Name */}
             <div ref={nameRef} className="relative z-10 px-4 py-8 md:px-9 flex justify-center items-center">
-                <div className="typewriter text-[40px] sm:text-[80px] md:text-[170px] font-bold tracking-tight text-center mt-5.5">
+                <div className="typewriter text-[40px] sm:text-[80px] md:text-[170px] font-bold tracking-tight text-center mt-5.5 text-[#000000]">
                     <Typewriter
                         onInit={(typewriter) => {
                             typewriter
