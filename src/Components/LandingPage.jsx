@@ -77,9 +77,9 @@ const LandingPage = () => {
             />
 
             {/* Main content */}
-            <div ref={contentRef} className="relative bg-[#E8E8E3] min-h-screen w-full overflow-hidden">
+            <div ref={contentRef} className="relative bg-[#E8E8E3] min-h-screen w-full overflow-hidden -mt-5">
                 {/* Navigation */}
-            <nav ref={navRef} className="relative z-10 flex justify-between items-center px-6 md:px-9 py-2 mt-0">
+            <nav ref={navRef} className="relative z-10 flex justify-between items-center px-6 md:px-9 py-2 ">
                 <h1 className="text-[#6B645C] font-semibold text-xl">Web Developer</h1>
                 <div className="flex gap-6">
                     <a href="#works" className="nav-link text-[#6B645C]  hover:text-amber-50">
