@@ -1,0 +1,26 @@
+[data-scroll-container] {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+[data-scroll-section] {
+    position: relative;
+    width: 100%;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+/* GSAP controls transforms, keep CSS minimal to avoid conflicts */
+
+/* Hide scrollbar but keep functionality */
+.scroll-section {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scroll-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
