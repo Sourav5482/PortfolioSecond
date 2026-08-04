@@ -1,0 +1,10 @@
+{
+  "name": "Sourav Das Portfolio",
+  "short_name": "Sourav",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "description": "Portfolio of Sourav Das - Full Stack & Machine Learning Developer",
+  "icons": []
+}
